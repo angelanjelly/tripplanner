@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TripPlanner workshop</title>
+	<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<!-- 
+	<select name="hotels">
+	  <option value="value1">Value 1</option> 
+	  <option value="value2" selected>Value 2</option>
+	  <option value="value3">Value 3</option>
+	</select>
+
+	<select name="restaurants">
+	  <option value="value1">Value 1</option> 
+	  <option value="value2" selected>Value 2</option>
+	  <option value="value3">Value 3</option>
+	</select>
+
+	<select name="activities">
+	  <option value="value1">Value 1</option> 
+	  <option value="value2" selected>Value 2</option>
+	  <option value="value3">Value 3</option>
+	</select>
+ --> 
+	 <div class="hotels">Hotels
+		{% block content %}
+		    <!-- PLACEHOLDER LIST OF HOTELS -->
+		    <select name="hotels">
+		    {% for hotel in templateHotels %}
+		        <option value="{{ hotel.name }}">{{hotel.name}}</option>
+		    {% endfor %}
+		    </select>
+		{% endblock %}
+	</div>
+
+	 <div class="restaurants">Restaurants
+		{% block content %}
+		    <!-- PLACEHOLDER LIST OF RESTAURANTS -->
+		    <select name="restaurants">
+		    {% for restaurant in templateRestaurants %}
+		        <option value="{{ restaurant.name }}">{{restaurant.name}}</option>
+		    {% endfor %}
+		    </select>
+
+		{% endblock %}
+	</div>
+
+	 <div class="activities">Activities
+		{% block content %}
+		    <!-- PLACEHOLDER LIST OF ACTIVITIES -->
+		    <select name="activities">
+		    {% for activity in templateActivities %}
+		        <option value="{{ activity.name }}">{{activity.name}}</option>
+		    {% endfor %}
+		    </select>
+		{% endblock %}
+	</div>
+
+</body>
+</html>
